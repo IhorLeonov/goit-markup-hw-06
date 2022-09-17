@@ -689,8 +689,6 @@ footer {
   | Modal window form 
   |============================
 */
-.callback-form {
-}
 .callback-title {
   display: block;
   text-align: center;
@@ -700,15 +698,139 @@ footer {
   color: var(--primery-title-color);
 }
 .callback-form-group {
+  margin-bottom: 20px;
 }
 .callback-form-field {
+  position: relative;
   display: block;
+  margin-left: 40px;
+  margin-bottom: 10px;
 }
 .callback-form-label {
   display: block;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
 }
 .callback-form-input {
   display: block;
+  padding-left: 42px;
+  padding-right: 42px;
+
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border var(--main-animation);
+}
+.callback-form-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+
+  transition: fill var(--main-animation);
+}
+.callback-form-input:focus ~ .callback-form-icon,
+.callback-form-input:hover ~ .callback-form-icon,
+.callback-form-icon:hover,
+.callback-form-icon:focus {
+  fill: var(--primery-accent-color);
+}
+.callback-form-input:focus,
+.callback-form-input:hover,
+.callback-form-massage:hover,
+.callback-form-massage:focus {
+  border-color: var(--primery-accent-color);
+}
+.callback-form-icon:hover .callback-form-input {
+  border-color: var(--primery-accent-color);
+}
+.callback-form-massage {
+  width: 448px;
+  height: 120px;
+  resize: none;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border var(--main-animation);
+}
+.callback-form-massage::placeholder {
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.callback-form-agreement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-bottom: 30px;
+}
+.callback-agreement-desc {
+  line-height: calc(24 / 14);
+}
+.callback-form-link {
+  color: var(--primery-accent-color);
+}
+
+.icon-checked {
+  opacity: 0;
+  fill: var(--primery-accent-color);
+  transition: opacity var(--main-animation);
+}
+.agreement-checkbox-icons {
+  transition: outline var(--main-animation);
+}
+.agreement-checkbox:checked + .agreement-checkbox-icons .icon-checked {
+  opacity: 1;
+}
+.icon-unchecked {
+  transition: opacity var(--main-animation);
+}
+.agreement-checkbox:checked + .agreement-checkbox-icons .icon-unchecked {
+  opacity: 0;
+}
+.agreement-checkbox:focus + .agreement-checkbox-icons{
+  outline: 2px solid rgb(22, 67, 190);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+.agreement-checkbox:hover + .agreement-checkbox-icons{
+  outline: 2px solid var(--primery-accent-color);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+.callback-agreement-desc {
+  font-size: 14px;
+  user-select: none;
+}
+.callback-form-btn {
+  display: block;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 50px;
+
+  text-align: center;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  color: var(--primery-white-color);
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: color var(--main-animation), background-color var(--main-animation);
+}
+.callback-form-btn:hover,
+.callback-form-btn:focus,
+.callback-form-btn:active {
+  color: var(--primery-title-color);
+  background-color: #f5f4fa;
 }
 /**
   |============================
@@ -733,8 +855,8 @@ footer {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: #2f303a;
+  transition: border-color var(--main-animation);
 }
-
 .subscribe-btn {
   display: inline-block;
   position: relative;
@@ -770,4 +892,8 @@ footer {
 .subscribe-btn:hover .subscribe-icon,
 .subscribe-btn:focus .subscribe-icon {
   fill: var(--primery-accent-color);
+}
+.subscribe-form-input:hover,
+.subscribe-form-input:focus {
+  border-color: var(--primery-white-color);
 }
