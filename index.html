@@ -515,20 +515,21 @@
         </div>
         <form class="subscribe-form">
           <h3 class="socials-title">Підпишіться на розсилку</h3>
-          <label class="subscribe-form-label">
+          <div class="subscribe-group">
+            <label class="subscribe-form-label">
             <input
               class="subscribe-form-input"
               type="email"
               name="subscribe"
               placeholder="E-mail"
-            />
+            /></label>
             <button class="subscribe-btn button" type="submit"
               >Підписатися
               <svg class="subscribe-icon" width="24" height="24">
                 <use href="./images/icons.svg#subscribe-icon"></use>
               </svg>
             </button>
-          </label>
+          </div>
         </form>
       </div>
     </footer>
@@ -593,7 +594,6 @@
               <span class="callback-form-label">Коментар</span>
               <textarea
                 class="callback-form-massage"
-                type="text"
                 name="comment"
                 required
                 minlength="3"
